@@ -29,6 +29,10 @@ Check the video below for a quick demonstration of the working!
 A heartfelt project born out of **bugs**, **retries**, a ton of **debugging**, and a quiet little **win** that reminded me why I love this process. 🌠
 ---
 
+## Live Demo? Check this out:
+https://darkphoenixfn56-cosmicraysimulator-abc-vructh.streamlit.app/
+
+
 ## 🔧 Setup Instructions
 
 1. Clone the repository:
