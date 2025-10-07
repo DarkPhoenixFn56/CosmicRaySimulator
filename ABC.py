@@ -12,16 +12,45 @@ st.subheader("Cherenkov Telescope Event Prediction")
 st.markdown("Enter the observed parameters:")
 
 # Correct input sliders
-fLength = st.slider("fLength", 0.0, 200.0, 100.0)
-fWidth = st.slider("fWidth", 0.0, 20.0, 5.0)
+fLength = st.slider("fLength", 0.0, 200.0, 100.0,key='fLength')
+fWidth = st.slider("fWidth", 0.0, 20.0, 5.0,key='fWidth')
 fWidth1 = 2.35  
-fConc = st.slider("fConc", 0.0, 2000.0, 1000.0)
+fConc = st.slider("fConc", 0.0, 2000.0, 1000.0,key='fConc')
 fConc1 = 0.32
-fAsym = st.slider("fAsym",-1.0,1.0,0.0)
-fM3Long = st.slider("fM3Long", -2.0, 2.0, 0.2)
-fM3Trans =st.slider("fM3Trans",0.0,180.0,20.0)
-fAlpha = st.slider("fAlpha", 0.0, 180.0, 20.0)
-fDist = st.slider("fDist", 0.0, 350.0, 100.0)
+fAsym = st.slider("fAsym",-1.0,1.0,0.0,key='fAsym')
+fM3Long = st.slider("fM3Long", -2.0, 2.0, 0.2,key='fM3Long')
+fM3Trans =st.slider("fM3Trans",0.0,180.0,20.0,key='fM3Trans')
+fAlpha = st.slider("fAlpha", 0.0, 180.0, 20.0,key='fAlpha')
+fDist = st.slider("fDist", 0.0, 350.0, 100.0,key='fDist')
+
+# add after defining sliders (use exact keys you used for sliders)
+# Ensure your sliders have keys, e.g. st.slider(..., key='fLength')
+# or refer to the variable names in session_state.
+
+if st.button("Preset: Hardcore Gamma"):
+    st.session_state['fLength'] = 100.0
+    st.session_state['fWidth']  = 2.5
+    st.session_state['fWidth1'] = 1.8
+    st.session_state['fConc']   = 1.6
+    st.session_state['fConc1']  = 0.55
+    st.session_state['fAsym']   = 0.0
+    st.session_state['fM3Long'] = 0.05
+    st.session_state['fM3Trans']= 0.9
+    st.session_state['fAlpha']  = 6.0
+    st.session_state['fDist']   = 80.0
+
+if st.button("Preset: Ultra Gamma"):
+    st.session_state['fLength'] = 95.0
+    st.session_state['fWidth']  = 1.6
+    st.session_state['fWidth1'] = 1.6
+    st.session_state['fConc']   = 1.8
+    st.session_state['fConc1']  = 0.60
+    st.session_state['fAsym']   = -0.02
+    st.session_state['fM3Long'] = 0.0
+    st.session_state['fM3Trans']= 0.85
+    st.session_state['fAlpha']  = 2.0
+    st.session_state['fDist']   = 75.0
+
 
 # Prepare input DataFrame in correct column order
 input_data = pd.DataFrame([{
